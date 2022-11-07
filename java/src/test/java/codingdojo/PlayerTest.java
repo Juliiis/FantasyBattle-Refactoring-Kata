@@ -35,11 +35,10 @@ public class PlayerTest {
 
     Equipment equipment(){
         Item rightHand = new BasicItem("flashy sword of danger", 10, 1);
-        Item rightHandExcalibur = new BasicItem("excalibur", 0, 0);
         Item leftHand = new BasicItem("round shield", 0,0);
         Item feet = new BasicItem("ten league boots", 0, 0);
         Item head = new BasicItem("helmet of swiftness", 0, 0);
         Item chest = new BasicItem("breastplate of steel", 0, 0);
-        return new Equipment(rightHand, rightHandExcalibur, leftHand, feet, head, chest);
+        return new Equipment(rightHand, leftHand, feet, head, chest);
     }
 }
