@@ -8,7 +8,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class PlayerTest {
-
     // choose this one if you are familiar with mocks
     //@Disabled("Test is not finished yet")
     @Test
@@ -16,7 +15,7 @@ public class PlayerTest {
         Inventory inventory = mock(Inventory.class);
         Stats stats = mock(Stats.class);
         SimpleEnemy target = mock(SimpleEnemy.class);
-        when(inventory.getEquipment()).thenReturn(equipment());
+        when(inventory.getEquipment()).thenReturn(newEquipment());
         when(target.getArmor()).thenReturn(new SimpleArmor(5));
 
         Damage damage = new Player(inventory, stats).calculateDamage(target);
@@ -34,7 +33,7 @@ public class PlayerTest {
         assertEquals(10, damage.getAmount());
     }
 
-    Equipment equipment(){
+    Equipment newEquipment(){
         Item rightHand = new BasicItem("flashy sword of danger", 10, 1);
         Item leftHand = new BasicItem("round shield", 0,0);
         Item feet = new BasicItem("ten league boots", 0, 0);
