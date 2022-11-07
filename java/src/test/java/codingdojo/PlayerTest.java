@@ -17,9 +17,10 @@ public class PlayerTest {
         Stats stats = mock(Stats.class);
         SimpleEnemy target = mock(SimpleEnemy.class);
         when(inventory.getEquipment()).thenReturn(equipment());
+        when(target.getArmor()).thenReturn(new SimpleArmor(5));
 
         Damage damage = new Player(inventory, stats).calculateDamage(target);
-        assertEquals(10, damage.getAmount());
+        assertEquals(5, damage.getAmount());
     }
 
     // choose this one if you are not familiar with mocks
