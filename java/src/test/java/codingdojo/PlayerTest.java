@@ -24,6 +24,21 @@ public class PlayerTest {
         assertEquals(5, damage.getAmount());
     }
 
+    @Test
+    void damageCalculationForExcalibur() {
+        Inventory inventory = mock(Inventory.class);
+        Stats stats = mock(Stats.class);
+        SimpleEnemy target = mock(SimpleEnemy.class);
+
+        when(target.getSoakCalculated()).thenReturn(5);
+        when(inventory.getEquipment()).thenReturn(newEquipment());
+        when(inventory.getBaseDamage()).thenReturn(20);
+        when(inventory.getDamageModifier()).thenReturn(1.5f);
+
+        Damage damage = new Player(inventory, stats).calculateDamage(target);
+        assertEquals(25, damage.getAmount());
+    }
+
     Equipment newEquipment(){
         Item rightHand = new BasicItem("flashy sword of danger", 10, 1);
         Item leftHand = new BasicItem("round shield", 0,0);
