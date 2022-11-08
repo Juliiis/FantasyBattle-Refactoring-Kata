@@ -14,7 +14,7 @@ public class SimpleEnemy extends Target {
     Armor getArmor() {
         return this.armor;
     }
-    public int calculateSoak() {
+    public int getSoakCalculated() {
         int soak;
         soak = Math.round(
           getArmor().getDamageSoak() *
