@@ -31,21 +31,6 @@ class Player extends Target {
         return soak;
     }
 
-    /*private static int calculateSoak(SimpleEnemy simpleEnemy) {
-        int soak;
-        soak = Math.round(
-            simpleEnemy.getArmor().getDamageSoak() *
-            (
-                ((float) simpleEnemy.getBuffs()
-                    .stream()
-                    .mapToDouble(Buff::soakModifier)
-                    .sum()) +
-                1f
-            )
-        );
-        return soak;
-    }*/
-
     private float getDamageModifier() {
         Equipment equipment = this.inventory.getEquipment();
         Item leftHand = equipment.getLeftHand();
