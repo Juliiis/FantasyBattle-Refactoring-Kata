@@ -10,7 +10,7 @@ public class PlayerTest {
     // choose this one if you are familiar with mocks
     //@Disabled("Test is not finished yet")
     @Test
-    void damageCalculationforFlashySwordOfDanger() {
+    void damageCalculationForFlashySwordOfDanger() {
         Inventory inventory = mock(Inventory.class);
         Stats stats = mock(Stats.class);
         SimpleEnemy target = mock(SimpleEnemy.class);
