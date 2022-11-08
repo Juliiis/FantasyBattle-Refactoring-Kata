@@ -1,7 +1,7 @@
 package codingdojo;
 
 class Damage {
-    private int amount;
+    private final int amount;
 
     Damage(int amount) {
         this.amount = amount;

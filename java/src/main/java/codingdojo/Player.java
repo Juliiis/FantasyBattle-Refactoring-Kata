@@ -2,7 +2,7 @@ package codingdojo;
 
 
 class Player extends Target {
-    private Inventory inventory;
+    private final Inventory inventory;
     private Stats stats;
 
     Player(Inventory inventory, Stats stats) {

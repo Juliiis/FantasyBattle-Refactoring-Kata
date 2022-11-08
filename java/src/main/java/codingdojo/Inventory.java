@@ -1,7 +1,7 @@
 package codingdojo;
 
 public class Inventory {
-    private Equipment equipment;
+    private final Equipment equipment;
     Stats stats;
 
     public Inventory(Equipment equipment) {
