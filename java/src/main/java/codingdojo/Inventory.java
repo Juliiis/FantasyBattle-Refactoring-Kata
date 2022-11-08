@@ -1,17 +1,13 @@
 package codingdojo;
-
 public class Inventory {
     private final Equipment equipment;
     Stats stats;
-
     public Inventory(Equipment equipment) {
         this.equipment = equipment;
     }
-
     Equipment getEquipment() {
         return equipment;
     }
-
     public int getBaseDamage() {
         Equipment equipment = getEquipment();
         Item leftHand = equipment.getLeftHand();
@@ -25,7 +21,6 @@ public class Inventory {
           feet.getBaseDamage() +
           chest.getBaseDamage();
     }
-
     public float getDamageModifier() {
         Equipment equipment = getEquipment();
         Item leftHand = equipment.getLeftHand();

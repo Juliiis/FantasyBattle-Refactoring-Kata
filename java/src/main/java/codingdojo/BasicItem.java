@@ -1,5 +1,4 @@
 package codingdojo;
-
 public class BasicItem implements Item {
 
     private String name;
