@@ -11,13 +11,10 @@ public class SimpleEnemy extends Target {
     List<Buff> getBuffs() {
         return buffs;
     }
-    Armor getArmor() {
-        return this.armor;
-    }
     public int getSoakCalculated() {
         int soak;
         soak = Math.round(
-          getArmor().getDamageSoak() *
+          armor.getDamageSoak() *
             (
               ((float) getBuffs()
                 .stream()
