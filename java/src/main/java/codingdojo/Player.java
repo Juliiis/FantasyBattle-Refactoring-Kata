@@ -12,7 +12,7 @@ class Player extends Target {
 
     Damage calculateDamage(Target target) {
         int baseDamage = inventory.getBaseDamage();
-        float damageModifier = getDamageModifier();
+        float damageModifier = inventory.getDamageModifier();
         int totalDamage = Math.round(baseDamage * damageModifier);
         int soak = getSoak(target, totalDamage);
         return new Damage(Math.max(0, totalDamage - soak));
@@ -29,22 +29,6 @@ class Player extends Target {
             soak = simpleEnemy.calculateSoak();
         }
         return soak;
-    }
-
-    private float getDamageModifier() {
-        Equipment equipment = this.inventory.getEquipment();
-        Item leftHand = equipment.getLeftHand();
-        Item rightHand = equipment.getRightHand();
-        Item head = equipment.getHead();
-        Item feet = equipment.getFeet();
-        Item chest = equipment.getChest();
-        float strengthModifier = stats.getStrength() * 0.1f;
-        return strengthModifier +
-            leftHand.getDamageModifier() +
-            rightHand.getDamageModifier() +
-            head.getDamageModifier() +
-            feet.getDamageModifier() +
-            chest.getDamageModifier();
     }
 
 }

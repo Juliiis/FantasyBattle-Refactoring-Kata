@@ -19,7 +19,8 @@ public class PlayerTest {
         when(target.calculateSoak()).thenReturn(5);
         when(inventory.getEquipment()).thenReturn(newEquipment());
         when(inventory.getBaseDamage()).thenReturn(10);
-
+        when(inventory.getDamageModifier()).thenReturn(1.0f);
+        
         Damage damage = new Player(inventory, stats).calculateDamage(target);
         assertEquals(5, damage.getAmount());
     }
