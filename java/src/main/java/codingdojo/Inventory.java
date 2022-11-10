@@ -26,7 +26,7 @@ public class Inventory {
         Item head = equipment.getHead();
         Item feet = equipment.getFeet();
         Item chest = equipment.getChest();
-        float strengthModifier = getStrengthModifier();
+        float strengthModifier = stats.getStrengthModifier();
         return strengthModifier +
           leftHand.getDamageModifier() +
           rightHand.getDamageModifier() +
@@ -35,7 +35,4 @@ public class Inventory {
           chest.getDamageModifier();
     }
 
-    private float getStrengthModifier() {
-        return stats.getStrength() * 0.1f;
-    }
 }
