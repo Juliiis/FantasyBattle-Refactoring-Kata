@@ -8,7 +8,7 @@ public class SimpleEnemy extends Target {
         this.armor = armor;
         this.buffs = buffs;
     }
-    List<Buff> getBuffs() {
+    private List<Buff> getBuffs() {
         return buffs;
     }
     public int getSoakCalculated() {
@@ -16,7 +16,7 @@ public class SimpleEnemy extends Target {
         soak = Math.round(
           armor.getDamageSoak() *
             (
-              ((float) getBuffs()
+              ((float) buffs
                 .stream()
                 .mapToDouble(Buff::soakModifier)
                 .sum()) +
