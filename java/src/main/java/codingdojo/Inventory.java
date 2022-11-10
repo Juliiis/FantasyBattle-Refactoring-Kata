@@ -1,7 +1,7 @@
 package codingdojo;
 public class Inventory {
     private final Equipment equipment;
-    Stats stats;
+    private Stats stats;
     public Inventory(Equipment equipment) {
         this.equipment = equipment;
     }
@@ -9,7 +9,6 @@ public class Inventory {
         return equipment;
     }
     public int getBaseDamage() {
-        Equipment equipment = getEquipment();
         Item leftHand = equipment.getLeftHand();
         Item rightHand = equipment.getRightHand();
         Item head = equipment.getHead();
@@ -22,18 +21,21 @@ public class Inventory {
           chest.getBaseDamage();
     }
     public float getDamageModifier() {
-        Equipment equipment = getEquipment();
         Item leftHand = equipment.getLeftHand();
         Item rightHand = equipment.getRightHand();
         Item head = equipment.getHead();
         Item feet = equipment.getFeet();
         Item chest = equipment.getChest();
-        float strengthModifier = stats.getStrength() * 0.1f;
+        float strengthModifier = getStrengthModifier();
         return strengthModifier +
           leftHand.getDamageModifier() +
           rightHand.getDamageModifier() +
           head.getDamageModifier() +
           feet.getDamageModifier() +
           chest.getDamageModifier();
+    }
+
+    private float getStrengthModifier() {
+        return stats.getStrength() * 0.1f;
     }
 }
