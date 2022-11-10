@@ -8,9 +8,6 @@ public class SimpleEnemy extends Target {
         this.armor = armor;
         this.buffs = buffs;
     }
-    private List<Buff> getBuffs() {
-        return buffs;
-    }
     public int getSoakCalculated() {
         int soak;
         soak = Math.round(
